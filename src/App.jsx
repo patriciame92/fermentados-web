@@ -456,6 +456,18 @@ Notas: ${form.notas || "-"}`;
               <a href="#pedido" style={s.button}>Hacer pedido</a>
               <a href="#chat" style={s.buttonSecondary}>Resolver dudas</a>
             </div>
+            <div style={{
+              marginTop: 20,
+              padding: 14,
+              background: "#f5efe6",
+              borderRadius: 14,
+              fontSize: 14,
+              color: "#5c5248",
+              lineHeight: 1.7
+            }}>
+            📍 Entregas en Algeciras y alrededores <br />
+            🕒 Pedidos de lunes a sábado
+            </div>
           </motion.div>
 
           <motion.div initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }}>
