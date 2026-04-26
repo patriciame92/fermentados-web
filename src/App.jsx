@@ -61,7 +61,8 @@ const chatbotRules = [
   },
   {
     keywords: ["productos", "pan", "focaccia", "arepas", "precio", "precios"],
-    answer: "Ahora mismo mostramos precios orientativos: pan 4,50 €, focaccia 6,50 € y arepas desde 3,50 €.",
+    answer:
+      "Ahora mismo mostramos precios orientativos: pan 4,50 €, focaccia 6,50 € y arepas desde 3,50 €.",
   },
 ];
 
@@ -76,12 +77,16 @@ function styles() {
       background: "#f8f5ef",
       color: "#2a2118",
       fontFamily: "Arial, sans-serif",
+      overflowX: "hidden",
+      boxSizing: "border-box",
     },
     container: {
       width: "100%",
-      maxWidth: 1400,
+      maxWidth: 1200,
       margin: "0 auto",
-      padding: "0 20px",
+      padding: "20px",
+      boxSizing: "border-box",
+      overflowX: "hidden",
     },
     header: {
       display: "flex",
@@ -94,19 +99,26 @@ function styles() {
       padding: 20,
       boxShadow: "0 8px 24px rgba(0,0,0,0.08)",
       marginBottom: 24,
+      boxSizing: "border-box",
+      width: "100%",
     },
     brand: {
       display: "flex",
       alignItems: "center",
       gap: 18,
+      flex: "1 1 280px",
+      minWidth: 0,
+      flexWrap: "wrap",
     },
     logo: {
-      width: 120,
-      height: 120,
+      width: 110,
+      height: 110,
+      maxWidth: "100%",
       objectFit: "cover",
       borderRadius: 20,
       background: "transparent",
       boxShadow: "0 8px 24px rgba(0,0,0,0.12)",
+      flexShrink: 0,
     },
     badge: {
       display: "inline-block",
@@ -120,24 +132,28 @@ function styles() {
     },
     hero: {
       display: "grid",
-      gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-      gap: 24,
-      alignItems: "center",
-      marginBottom: 28,
+      gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 420px), 1fr))",
+      gap: 32,
+      alignItems: "start",
+      marginBottom: 40,
+      width: "100%",
+      boxSizing: "border-box",
     },
     heroCard: {
       background: "#ffffff",
       borderRadius: 24,
       padding: 28,
       boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
+      width: "100%",
+      boxSizing: "border-box",
     },
     title: {
-      fontSize: 44,
+      fontSize: "clamp(32px, 5vw, 44px)",
       lineHeight: 1.1,
       margin: "0 0 16px 0",
     },
     paragraph: {
-      fontSize: 18,
+      fontSize: "clamp(16px, 2vw, 18px)",
       lineHeight: 1.7,
       color: "#5f564d",
       margin: 0,
@@ -161,6 +177,23 @@ function styles() {
       cursor: "pointer",
       fontWeight: 700,
       fontSize: 15,
+      boxSizing: "border-box",
+    },
+    whatsappButton: {
+      display: "inline-flex",
+      alignItems: "center",
+      gap: 8,
+      textDecoration: "none",
+      background: "#25D366",
+      color: "white",
+      padding: "12px 18px",
+      borderRadius: 14,
+      border: "none",
+      cursor: "pointer",
+      fontWeight: 700,
+      fontSize: 15,
+      boxSizing: "border-box",
+      boxShadow: "0 8px 20px rgba(37, 211, 102, 0.25)",
     },
     buttonSecondary: {
       display: "inline-flex",
@@ -175,28 +208,38 @@ function styles() {
       cursor: "pointer",
       fontWeight: 700,
       fontSize: 15,
+      boxSizing: "border-box",
     },
     sectionTitle: {
-      fontSize: 32,
+      fontSize: "clamp(28px, 4vw, 32px)",
       marginBottom: 18,
+      textAlign: "center",
     },
     grid3: {
       display: "grid",
-      gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+      gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 280px), 1fr))",
       gap: 18,
       marginBottom: 30,
+      width: "100%",
+      boxSizing: "border-box",
     },
     card: {
       background: "#ffffff",
       borderRadius: 20,
       padding: 22,
       boxShadow: "0 8px 24px rgba(0,0,0,0.08)",
+      width: "100%",
+      boxSizing: "border-box",
+      minWidth: 0,
     },
     productCard: {
       background: "#ffffff",
       borderRadius: 20,
       overflow: "hidden",
       boxShadow: "0 8px 24px rgba(0,0,0,0.08)",
+      width: "100%",
+      boxSizing: "border-box",
+      minWidth: 0,
     },
     productImage: {
       width: "100%",
@@ -207,6 +250,7 @@ function styles() {
     },
     productBody: {
       padding: 20,
+      boxSizing: "border-box",
     },
     priceTag: {
       display: "inline-block",
@@ -220,9 +264,10 @@ function styles() {
     },
     formGrid: {
       display: "grid",
-      gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+      gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 220px), 1fr))",
       gap: 12,
       marginBottom: 12,
+      width: "100%",
     },
     input: {
       width: "100%",
@@ -231,6 +276,7 @@ function styles() {
       border: "1px solid #d9d1c7",
       fontSize: 15,
       boxSizing: "border-box",
+      minWidth: 0,
     },
     textarea: {
       width: "100%",
@@ -242,12 +288,15 @@ function styles() {
       boxSizing: "border-box",
       resize: "vertical",
       marginBottom: 12,
+      minWidth: 0,
     },
     twoCol: {
       display: "grid",
-      gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+      gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 320px), 1fr))",
       gap: 22,
       marginBottom: 30,
+      width: "100%",
+      boxSizing: "border-box",
     },
     chatBox: {
       height: 260,
@@ -256,6 +305,7 @@ function styles() {
       borderRadius: 16,
       padding: 16,
       marginBottom: 12,
+      boxSizing: "border-box",
     },
     botMsg: {
       background: "white",
@@ -279,7 +329,7 @@ function styles() {
       position: "fixed",
       right: 20,
       bottom: 20,
-      background: "#2a2118",
+      background: "#25D366",
       color: "white",
       width: 56,
       height: 56,
@@ -287,14 +337,28 @@ function styles() {
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      boxShadow: "0 10px 28px rgba(0,0,0,0.2)",
+      boxShadow: "0 10px 28px rgba(37, 211, 102, 0.35)",
       textDecoration: "none",
+      zIndex: 20,
     },
     smallNote: {
       color: "#7a7068",
       fontSize: 14,
       lineHeight: 1.6,
       marginTop: 8,
+    },
+    infoBox: {
+      marginTop: 20,
+      padding: 16,
+      background: "#efe7dc",
+      borderRadius: 14,
+      fontSize: 15,
+      color: "#3e362f",
+      lineHeight: 1.7,
+      fontWeight: 500,
+      boxSizing: "border-box",
+      width: "100%",
+      maxWidth: 560,
     },
   };
 }
@@ -327,7 +391,10 @@ function ImageWithFallback({ src, alt, style }) {
 function FAQChat() {
   const s = styles();
   const [messages, setMessages] = useState([
-    { role: "bot", text: "Hola, soy el asistente de Fermentados by Jimmy. Pregúntame sobre pedidos, pago, productos o precios." },
+    {
+      role: "bot",
+      text: "Hola, soy el asistente de Fermentados by Jimmy. Pregúntame sobre pedidos, pago, productos o precios.",
+    },
   ]);
   const [text, setText] = useState("");
 
@@ -346,11 +413,13 @@ function FAQChat() {
   const send = () => {
     if (!text.trim()) return;
     const userText = text.trim();
+
     setMessages((prev) => [
       ...prev,
       { role: "user", text: userText },
       { role: "bot", text: getAnswer(userText) },
     ]);
+
     setText("");
   };
 
@@ -387,6 +456,7 @@ function FAQChat() {
 
 export default function App() {
   const s = styles();
+
   const [form, setForm] = useState({
     nombre: "",
     telefono: "",
@@ -428,17 +498,18 @@ Notas: ${form.notas || "-"}`;
           <div style={s.buttonRow}>
             <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" style={s.buttonSecondary}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style={{ color: "#E1306C" }}>
-              <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" strokeWidth="2"/>
-              <circle cx="12" cy="12" r="5" stroke="currentColor" strokeWidth="2"/>
-              <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/>
+                <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" strokeWidth="2" />
+                <circle cx="12" cy="12" r="5" stroke="currentColor" strokeWidth="2" />
+                <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" />
               </svg>
               Instagram
             </a>
+
             <a
               href={getWhatsappUrl("Hola Jimmy, quiero información sobre tus productos.")}
               target="_blank"
               rel="noreferrer"
-              style={s.button}
+              style={s.whatsappButton}
             >
               <Phone size={18} /> WhatsApp
             </a>
@@ -448,28 +519,26 @@ Notas: ${form.notas || "-"}`;
         <div style={s.hero}>
           <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }}>
             <div style={s.badge}>Hecho artesanalmente</div>
+
             <h1 style={s.title}>Donde el tiempo es ingrediente.</h1>
+
             <p style={s.paragraph}>
-              Un nuevo espacio donde la fermentación no se acelera.
-              Donde el sabor tiene memoria.
+              Un nuevo espacio donde la fermentación no se acelera. Donde el sabor tiene memoria.
             </p>
+
             <div style={s.buttonRow}>
-              <a href="#pedido" style={s.button}>Hacer pedido</a>
-              <a href="#chat" style={s.buttonSecondary}>Resolver dudas</a>
+              <a href="#pedido" style={s.button}>
+                Hacer pedido
+              </a>
+              <a href="#chat" style={s.buttonSecondary}>
+                Resolver dudas
+              </a>
             </div>
-            <div style={{
-              marginTop: 20,
-              padding: 16,
-              background: "#efe7dc",
-              borderRadius: 14,
-              fontSize: 15,
-              color: "#3e362f",
-              lineHeight: 1.7,
-              fontWeight: 500,
-            }}>
-            📍 Entregas en Algeciras y alrededores <br />
-            🕒 Pedidos de lunes a sábado <br />
-            ⏳ Pedidos con al menos 24h de antelación
+
+            <div style={s.infoBox}>
+              📍 Entregas en Algeciras y alrededores <br />
+              🕒 Pedidos de lunes a sábado <br />
+              ⏳ Pedidos con al menos 24h de antelación
             </div>
           </motion.div>
 
@@ -477,16 +546,20 @@ Notas: ${form.notas || "-"}`;
             <div style={s.heroCard}>
               <h3 style={{ marginTop: 0 }}>Cómo funciona</h3>
               <p style={{ ...s.paragraph, fontSize: 16 }}>
-                1. Me escribes desde la web con lo que te apetece.<br />
-                2. Hablamos y concretamos día y hora de entrega.<br />
-                3. Preparo todo de forma artesanal para ti.<br />
-                4. Pagas en efectivo al recogerlo. 
+                1. Me escribes desde la web con lo que te apetece.
+                <br />
+                2. Hablamos y concretamos día y hora de entrega.
+                <br />
+                3. Preparo todo de forma artesanal para ti.
+                <br />
+                4. Pagas en efectivo al recogerlo.
               </p>
             </div>
           </motion.div>
         </div>
 
         <h2 style={s.sectionTitle}>Productos</h2>
+
         <div style={s.grid3}>
           {products.map((product) => (
             <div key={product.title} style={s.productCard}>
@@ -508,10 +581,30 @@ Notas: ${form.notas || "-"}`;
             </p>
 
             <div style={s.formGrid}>
-              <input style={s.input} placeholder="Nombre" value={form.nombre} onChange={(e) => update("nombre", e.target.value)} />
-              <input style={s.input} placeholder="Teléfono" value={form.telefono} onChange={(e) => update("telefono", e.target.value)} />
-              <input style={s.input} placeholder="Fecha deseada" value={form.fecha} onChange={(e) => update("fecha", e.target.value)} />
-              <input style={s.input} placeholder="Hora deseada" value={form.hora} onChange={(e) => update("hora", e.target.value)} />
+              <input
+                style={s.input}
+                placeholder="Nombre"
+                value={form.nombre}
+                onChange={(e) => update("nombre", e.target.value)}
+              />
+              <input
+                style={s.input}
+                placeholder="Teléfono"
+                value={form.telefono}
+                onChange={(e) => update("telefono", e.target.value)}
+              />
+              <input
+                style={s.input}
+                placeholder="Fecha deseada"
+                value={form.fecha}
+                onChange={(e) => update("fecha", e.target.value)}
+              />
+              <input
+                style={s.input}
+                placeholder="Hora deseada"
+                value={form.hora}
+                onChange={(e) => update("hora", e.target.value)}
+              />
             </div>
 
             <textarea
@@ -528,14 +621,16 @@ Notas: ${form.notas || "-"}`;
               onChange={(e) => update("notas", e.target.value)}
             />
 
-            <a href={whatsappOrderUrl} target="_blank" rel="noreferrer" style={s.button}>
+            <a href={whatsappOrderUrl} target="_blank" rel="noreferrer" style={s.whatsappButton}>
               <MessageCircle size={18} /> Enviar pedido por WhatsApp
             </a>
+
             <p style={s.smallNote}>Pago en efectivo. Precios mostrados de forma orientativa.</p>
           </div>
 
           <div style={s.card}>
             <h2 style={{ marginTop: 0 }}>Preguntas frecuentes</h2>
+
             {faqs.map((faq) => (
               <div key={faq.q} style={{ marginBottom: 18 }}>
                 <div style={{ fontWeight: 700, marginBottom: 6 }}>{faq.q}</div>
