@@ -163,6 +163,7 @@ function styles() {
       gap: 12,
       flexWrap: "wrap",
       marginTop: 20,
+      justifyContent: "center",
     },
     button: {
       display: "inline-flex",
@@ -348,17 +349,16 @@ function styles() {
       marginTop: 8,
     },
     infoBox: {
-      marginTop: 20,
-      padding: 16,
+      padding: 18,
       background: "#efe7dc",
-      borderRadius: 14,
+      borderRadius: 18,
       fontSize: 15,
       color: "#3e362f",
-      lineHeight: 1.7,
+      lineHeight: 1.8,
       fontWeight: 500,
       boxSizing: "border-box",
       width: "100%",
-      maxWidth: 560,
+      border: "1px solid #e2d8cc",
     },
   };
 }
@@ -534,26 +534,28 @@ Notas: ${form.notas || "-"}`;
                 Resolver dudas
               </a>
             </div>
-
-            <div style={s.infoBox}>
-              📍 Entregas en Algeciras y alrededores <br />
-              🕒 Pedidos de lunes a sábado <br />
-              ⏳ Pedidos con al menos 24h de antelación
-            </div>
           </motion.div>
 
           <motion.div initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }}>
-            <div style={s.heroCard}>
-              <h3 style={{ marginTop: 0 }}>Cómo funciona</h3>
-              <p style={{ ...s.paragraph, fontSize: 16 }}>
-                1. Me escribes desde la web con lo que te apetece.
-                <br />
-                2. Hablamos y concretamos día y hora de entrega.
-                <br />
-                3. Preparo todo de forma artesanal para ti.
-                <br />
-                4. Pagas en efectivo al recogerlo.
-              </p>
+            <div style={{ display: "grid", gap: 16 }}>
+              <div style={s.heroCard}>
+                <h3 style={{ marginTop: 0 }}>Cómo funciona</h3>
+                <p style={{ ...s.paragraph, fontSize: 16 }}>
+                  1. Me escribes desde la web con lo que te apetece.
+                  <br />
+                  2. Hablamos y concretamos día y hora de entrega.
+                  <br />
+                  3. Preparo todo de forma artesanal para ti.
+                  <br />
+                  4. Pagas en efectivo al recogerlo.
+                </p>
+              </div>
+
+              <div style={s.infoBox}>
+                📍 Entregas en Algeciras y alrededores <br />
+                🕒 Pedidos de lunes a sábado <br />
+                ⏳ Pedidos con al menos 24h de antelación
+              </div>
             </div>
           </motion.div>
         </div>
