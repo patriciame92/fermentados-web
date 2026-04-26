@@ -78,9 +78,10 @@ function styles() {
       fontFamily: "Arial, sans-serif",
     },
     container: {
-      maxWidth: 1100,
+      width: "100%",
+      maxWidth: 1400,
       margin: "0 auto",
-      padding: "24px",
+      padding: "0 20px",
     },
     header: {
       display: "flex",
@@ -458,15 +459,17 @@ Notas: ${form.notas || "-"}`;
             </div>
             <div style={{
               marginTop: 20,
-              padding: 14,
-              background: "#f5efe6",
+              padding: 16,
+              background: "#efe7dc",
               borderRadius: 14,
-              fontSize: 14,
-              color: "#5c5248",
-              lineHeight: 1.7
+              fontSize: 15,
+              color: "#3e362f",
+              lineHeight: 1.7,
+              fontWeight: 500,
             }}>
             📍 Entregas en Algeciras y alrededores <br />
-            🕒 Pedidos de lunes a sábado
+            🕒 Pedidos de lunes a sábado <br />
+            ⏳ Pedidos con al menos 24h de antelación
             </div>
           </motion.div>
 
